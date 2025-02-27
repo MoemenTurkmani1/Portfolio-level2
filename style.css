@@ -1,0 +1,92 @@
+:root {
+    --primary-color: #4a76ee;
+    --text-color: #1a1c20;
+    --background-color: #eeeff1;
+    --background-color-h: #1a1c20;
+    --text-color-h: #eeeff1;
+    --white: #ffffff;
+    --gray: #666666;
+    --transition: all 0.3s ease;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+
+section {
+    padding: 5rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+@media (max-width: 768px) {
+   
+}
+
+/* 🔹 Header */
+header {
+    color: var(--text-color);
+    padding: 1em 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.my-name {
+    font-size: 14px;
+    font-weight: 550;
+}
+
+.list-li {
+    display: flex;
+    list-style: none;
+}
+
+
+.list-li li {
+    padding-left: 1em;
+}
+
+.list-li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 13px;
+    padding: 0.2em 0.5em ;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+
+.list-li a:hover,
+.list-li a.active { 
+    background-color: var(--background-color-h);
+    color: var(--text-color-h);
+}
+.icon-E{
+    font-size: 12px;
+}
+
+.hero h1{
+    display: inline;
+    font-size:xx-large;
+}
