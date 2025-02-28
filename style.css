@@ -25,24 +25,64 @@ body {
 
 
 section {
-    padding: 5rem 5%;
+    padding: 2em 7em ;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 
 @media (max-width: 768px) {
+    .text{
+        display: none;
+    }
+    .list-li a.active.active{
+    background-color: var(--background-color);
+    color: var(--text-color);
+   }
+   .list-li a.active.active:hover{
+    background-color: var(--background-color-h);
+    color: var(--text-color-h);
+   }
+   .icon{
+    font-size: large;
+   }
+   .my-name{
+    font-size: xx-large;
+   }
+   header{
+    display: inline;
+    padding-top: 0;
+   }
+   section{
+    padding: 0 1em;
+   }
+   .about{
+    display: flex;
+    flex-direction: column;
+   }
+   .about p{
+
+   }
+   h1{
+    width: 100%;
+    
+   }
+   .img{
+    width: 100%;
+   }
+    
+
    
 }
 
 /* 🔹 Header */
 header {
     color: var(--text-color);
-    padding: 1em 5%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin:  0 auto;
 }
-
+.hero{
+}
 nav {
     display: flex;
     justify-content: space-between;
@@ -85,8 +125,55 @@ nav {
 .icon-E{
     font-size: 12px;
 }
+h1{
+    font-size: 30px;
+}
+.hero {
+    display: flex;
+    gap: 2em;
+}
 
-.hero h1{
-    display: inline;
-    font-size:xx-large;
+.about {
+    padding: 3rem 0 0 0;
+}
+
+.about p{
+    font-size: 13px;
+    padding-bottom: 1rem;
+    
+}
+
+.img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.svg{
+    width: 14px;
+}
+
+.btn a{
+    fill: var(--primary-color); 
+    text-decoration: none;
+    color: var(--primary-color);
+    border: 1.5px solid var(--primary-color);
+    margin-right: 0.5em;
+    padding: 0.25em;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.btn a:hover{
+    color: var(--text-color);
+    border-color: var(--text-color);
+    fill: var(--text-color);
+    transition: 0.3s ;
+}
+.btn a:not(:hover){
+    transition: 0.3s;
+}
+
+.btn{
+    
 }
