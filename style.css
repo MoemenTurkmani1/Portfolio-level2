@@ -7,6 +7,7 @@
     --white: #ffffff;
     --gray: #666666;
     --transition: all 0.3s ease;
+    --background-color-tech: #ddd;
 }
 
 
@@ -27,7 +28,6 @@ body {
 section {
     padding: 2em 7em ;
     max-width: 1200px;
-    margin: 0 auto;
 }
 
 
@@ -177,3 +177,148 @@ h1{
 .btn{
     
 }
+.icon{
+    padding-right: 0.3em;
+    text-decoration: none;
+
+}
+h2{
+    text-align: center;
+    margin-top: 2re;
+}
+.MySkills{
+    font-size: 13px;
+    text-align: center;
+}
+
+#skills{
+    display: flex;
+    justify-content: center;
+
+}
+#skills a{
+    text-decoration: none;
+    font-size: 13px;
+    color: var(--text-color);
+    width: 8rem;
+    text-align: center;
+    margin: 1em;
+    border: solid var(--primary-color) 1px;
+    border-radius: 5px;
+    padding: 0.5em;
+}
+
+.project-card{
+    display: grid;
+
+}
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.project-card {
+    background: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.project-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+
+.project-card h3 {
+    font-size: 1em;
+    margin: 15px 15px 8px 15px;
+    color: var(--text-color);
+}
+
+.project-card p {
+    font-size:13px;
+    margin: 0 15px 15px;
+    color: #666;
+}
+
+.link-container {
+    display: flex;
+    padding: 15px;
+    
+}
+
+.link-container a {
+    text-decoration: none;
+    color: var(--primary-color);
+    padding-right:1em ;
+    font-size: 14px;
+}
+
+.link-container a:hover {
+    text-decoration: underline;
+}
+.tech{
+    border: 1px solid var(--background-color-tech);
+    border-radius: 5px;
+    background-color: var(--background-color-tech);
+    padding:  0.2em;
+    margin-left: 0.5em;
+    font-size: 14px;
+}
+.testimony{
+    border-radius: 50%;
+ 
+} .testimony {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+}
+
+.testimony img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #ddd;
+}
+
+.testimony h3 {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 5px 0;
+    width: 100%;
+}
+#people{
+    width: 100%;
+
+}
+
+.testimony p {
+    color: var(--text-color);
+}
+
+.comment {
+    padding: 10px;
+}
+#h3{
+    text-align: center;
+    font-size: 19px;
+}
+.commit{
+    color: var(--text-color);
+    text-align: left;
+    padding-left: 2rem;
+}
+
