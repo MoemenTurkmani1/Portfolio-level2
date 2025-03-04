@@ -663,6 +663,10 @@ footer {
     opacity: 0.8;
 }
 
+<<<<<<< HEAD
+=======
+/* Animations continuity with your existing styles */
+>>>>>>> final
 @keyframes slideRight {
     from { transform: translateX(-30px); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
