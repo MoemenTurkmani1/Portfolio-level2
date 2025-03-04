@@ -284,13 +284,17 @@ h1 {
     }
     
     .btn {
-        justify-content: center;
         flex-direction: column;
+        align-items: center;
+    
+    }
+    .Btn{
+        width: 8rem;
     }
     
     #skills {
        flex-direction: column;
-       text-align: center;
+       align-items: center;
     }
 }
 
@@ -301,7 +305,6 @@ h2 {
     margin-bottom: 1.5rem;
     color: var(--text-color);
 }
-
 .MySkills {
     font-size: 13px;
     text-align: center;
@@ -310,18 +313,32 @@ h2 {
 #skills {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-#skills a {
+.skill {
     text-decoration: none;
     font-size: 13px;
     color: var(--text-color);
     width: 8rem;
     text-align: center;
     margin: 1em;
-    border: solid var(--primary-color) 1px;
+    border: solid var(--text-color) 1px;
     border-radius: 5px;
     padding: 0.5em;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.skill img.image {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+}
+
+#skillName {
+    display: inline; 
 }
 
 .project-card {
@@ -535,20 +552,16 @@ h2 {
     .contact-form {
         width: 100%;
         padding-right: 0;
-    }
-}
-/* Add these to your CSS file */
+    }}
 .iti {
     width: 100%;
     margin-bottom: 15px;
 }
 
-/* Make the country dropdown work well with your form */
 .iti__flag-container {
     z-index: 10;
 }
 
-/* Style the phone input to match your other form elements */
 .iti__tel-input {
     width: 100%;
     padding: 10px;
@@ -650,7 +663,6 @@ footer {
     opacity: 0.8;
 }
 
-/* Animations continuity with your existing styles */
 @keyframes slideRight {
     from { transform: translateX(-30px); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
