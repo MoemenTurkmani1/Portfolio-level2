@@ -8,11 +8,17 @@
     --animation-timing: 0.5s;
     --background-color-tech: #ddd
 }
-main{
-    padding: 5rem 5%;
+
+   
+  main{
+    padding: 0.5em 7%;
     max-width: 1200px;
     margin: 0 auto;
-}
+  }
+
+  section{
+    padding: 3rem 0;
+  }
 
 /* Reset and Base Styles */
 * {
@@ -27,18 +33,15 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
 }
+html{
+    scroll-behavior: smooth;
+} 
 
-/* Sections */
-section {
-    padding: 5rem 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 /* 🔹 Header */
 header {
     color: var(--text-color);
-    padding: 2rem 9% 0 9%;
+    padding: 1em 7%;
     max-width: 1200px;
     margin: 0 auto;
     background-color: var(--background-color);
@@ -64,9 +67,7 @@ nav {
     margin: 0;
     padding: 0;
 }
-.image{
-    width: 10%;
-}
+
 
 .list-li li a {
     position: relative;
@@ -117,6 +118,7 @@ nav {
     animation: fadeIn var(--animation-timing) ease-out both;
 }
 
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .text {
@@ -154,8 +156,6 @@ nav {
 
 .skill {
     border: 1px solid var(--gray);
-    margin-right: 1rem;
-    padding: 0.3em 1.2em;
     margin-top: 1em;
     border-radius: 5px;
 }
@@ -174,31 +174,27 @@ h1 {
     display: flex;
     gap: 1em;
     align-items: center;
-    padding: 4rem 5%;
-    max-width: 1200px;
-    margin: 0 auto;
+   
 }
 
-.about {
-    padding: 3rem 0 0 0;
-}
 
 .about p {
     font-size: 15px;
-    padding-bottom: 1.5rem;
     line-height: 1.6;
     max-width: 800px;
 }
 
 .img {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
-
+.img:hover{
+    transform: scale(1.03);
+}
 .svg {
     width: 14px;
     vertical-align: middle;
@@ -209,6 +205,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 0.8em;
+    padding-top: 1em;
 }
 
 .btn a {
@@ -284,25 +281,24 @@ h1 {
     }
     
     .btn {
-        flex-direction: column;
+        flex-wrap: wrap;
         align-items: center;
-    
     }
     .Btn{
-        width: 8rem;
+        width: 6rem;
     }
     
     #skills {
-       flex-direction: column;
+       
+       flex-wrap: wrap;
        align-items: center;
     }
 }
 
 h2 {
     text-align: center;
-    margin-top: 2rem;
     font-size: 2.2rem;
-    margin-bottom: 1.5rem;
+
     color: var(--text-color);
 }
 .MySkills {
@@ -320,12 +316,12 @@ h2 {
     text-decoration: none;
     font-size: 13px;
     color: var(--text-color);
-    width: 8rem;
+    width: 7rem;
     text-align: center;
     margin: 1em;
     border: solid var(--text-color) 1px;
     border-radius: 5px;
-    padding: 0.5em;
+    padding: 0.5em 0;
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -343,21 +339,22 @@ h2 {
 
 .project-card {
     display: grid;
+    margin-right: 1em;
+    margin-bottom: 1em;
+
 }
 
 .par {
     text-align: center;
     font-size: 13px;
-    padding-bottom: 2em;
     color: var(--text-color);
 }
 
 #projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    max-width: 1200px;
-    margin: auto;
+   padding-top:1em ;
 }
 
 .project-card {
@@ -366,15 +363,16 @@ h2 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
+    gap: 0.6em;
 }
 
 .project-card img {
     width: 100%;
-    height: 150px;
+    height: 190px;
 }
 
 .project-card h3 {
-    font-size: 1em;
+    font-size: 1.2em;
     margin: 15px 15px 8px 15px;
     color: var(--text-color);
 }
@@ -406,12 +404,11 @@ h2 {
     border-radius: 5px;
     background-color: var(--background-color-tech);
     padding: 0.2em;
-    margin-left: 0.5em;
+    margin-left: 1em;
     font-size: 14px;
 }
 
 .testimonials-section {
-    padding: 3rem 1rem;
     background-color: var(--light-gray);
 }
 
@@ -464,7 +461,7 @@ h2 {
 .commit {
     color: var(--text-color);
     text-align: left;
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -475,11 +472,8 @@ h2 {
 
 .contact-container {
     display: flex;
-    padding: 20px;
     width: 100%;
     gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .contact-info {
@@ -511,7 +505,6 @@ h2 {
 .contact-form textarea {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
     border: 1.8px solid var(--primary-color);
     border-radius: 4px;
     font-size: 1rem;
@@ -529,7 +522,7 @@ h2 {
     background: var(--primary-color);
     color: var(--white);
     border: none;
-    padding: 12px;
+    padding: 10px;
     font-size: 1rem;
     margin-top: 15px;
     border-radius: 4px;
@@ -703,4 +696,43 @@ footer {
     .footer-description {
         margin: 0 auto;
     }
+}
+.validation-icon-container {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.validation-check, 
+.validation-x {
+    display: none;
+    margin-left: 5px;
+    font-size: 20px;
+}
+
+.validation-check {
+    color: green;
+}
+
+.validation-x {
+    color: red;
+}
+
+.validation-icon-container.valid .validation-check {
+    display: inline;
+}
+
+.validation-icon-container.invalid .validation-x {
+    display: inline;
+}
+
+/* Input styling based on validation */
+input.invalid, 
+textarea.invalid {
+    border-color: red;
+}
+
+input.valid, 
+textarea.valid {
+    border-color: green;
 }
