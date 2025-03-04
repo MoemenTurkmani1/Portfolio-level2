@@ -115,13 +115,30 @@ document.addEventListener("DOMContentLoaded", function () {
         skills.innerHTML = skillHTML;
 
 // Phone input initialization
-const phoneInput = document.querySelector("#phone");
-if (phoneInput) {
-    window.intlTelInput(phoneInput, {
-        preferredCountries: ["lb", "us", "gb"], // Lebanon first
-        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const phoneInput = document.querySelector("#phone");
+        if (phoneInput) {
+            const iti = window.intlTelInput(phoneInput, {
+                preferredCountries: ["lb", "us", "gb"], // Lebanon first
+                separateDialCode: true,
+                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+            });
+            
+            // Add form validation to ensure the phone number is valid before submission
+            const form = document.querySelector(".contact-form");
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    if (!iti.isValidNumber()) {
+                        e.preventDefault();
+                        alert("Please enter a valid phone number.");
+                        phoneInput.focus();
+                    }
+                });
+            }
+        }
     });
-}
+
 
 
 // EmailJS integration

@@ -537,3 +537,158 @@ h2 {
         padding-right: 0;
     }
 }
+/* Add these to your CSS file */
+.iti {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Make the country dropdown work well with your form */
+.iti__flag-container {
+    z-index: 10;
+}
+
+/* Style the phone input to match your other form elements */
+.iti__tel-input {
+    width: 100%;
+    padding: 10px;
+    border: 1.8px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.iti__tel-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(74, 109, 229, 0.3);
+}/* Footer Styles */
+footer {
+    padding: 2rem 0 1rem;
+    background-color: #f8f8f8;
+    border-top: 1px solid #eaeaea;
+    color: var(--text-color);
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-left {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 450px;
+    opacity: 0.85;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--text-color);
+    font-size: 1.25rem;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-3px);
+    color: #fff;
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #eaeaea;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Animations continuity with your existing styles */
+@keyframes slideRight {
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-right {
+    animation: slideRight var(--animation-timing, 0.5s) ease-out;
+}
+
+.fade-in {
+    animation: fadeIn var(--animation-timing, 0.5s) ease-out both;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .footer-right {
+        align-items: center;
+    }
+    
+    .footer-left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-description {
+        margin: 0 auto;
+    }
+}
