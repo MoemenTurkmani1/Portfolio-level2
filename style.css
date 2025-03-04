@@ -537,3 +537,29 @@ h2 {
         padding-right: 0;
     }
 }
+/* Add these to your CSS file */
+.iti {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Make the country dropdown work well with your form */
+.iti__flag-container {
+    z-index: 10;
+}
+
+/* Style the phone input to match your other form elements */
+.iti__tel-input {
+    width: 100%;
+    padding: 10px;
+    border: 1.8px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.iti__tel-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(74, 109, 229, 0.3);
+}
