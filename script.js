@@ -56,277 +56,264 @@ document.addEventListener("DOMContentLoaded", function () {
     }).join("");
 
     container.innerHTML = projectElements;
-
   
-  
-        let testimonyContainer = document.getElementById("testimony");
+    let testimonyContainer = document.getElementById("testimony");
         
-        let comments = [
-            {
-                img: "https://th.bing.com/th/id/OIP.UInbaJDzEYhDXegm7t1qkQAAAA?rs=1&pid=ImgDetMain",
-                name: "John Doe",
-                description: "Marketing Director",
-                commit: "\"The team exceeded our expectations with their attention to detail and quick turnaround. They understood our vision perfectly and delivered results that truly impressed our stakeholdersThe team exceeded our expectations with their attention to detail and quick turnaround. They understood our vision perfectly and delivered results that truly impressed our stakeholders\""
-            },
-           
-        ];
+    let comments = [
+        {
+            img: "https://th.bing.com/th/id/OIP.UInbaJDzEYhDXegm7t1qkQAAAA?rs=1&pid=ImgDetMain",
+            name: "John Doe",
+            description: "Marketing Director",
+            commit: "\"The team exceeded our expectations with their attention to detail and quick turnaround. They understood our vision perfectly and delivered results that truly impressed our stakeholdersThe team exceeded our expectations with their attention to detail and quick turnaround. They understood our vision perfectly and delivered results that truly impressed our stakeholders\""
+        },
+    ];
         
-        const peoples = comments.map(people => {
-            return `
-                <div class="testimony">
-                    <div class="people">
-                        <img src="${people.img}" alt="${people.name}">
-                        <h3>${people.name}</h3>
-                        <p class="description">${people.description}</p>
-                    </div>
-                    <div class="comment">
-                        <p class="commit">${people.commit}</p>
-                    </div>
+    const peoples = comments.map(people => {
+        return `
+            <div class="testimony">
+                <div class="people">
+                    <img src="${people.img}" alt="${people.name}">
+                    <h3>${people.name}</h3>
+                    <p class="description">${people.description}</p>
                 </div>
-            `;
-        }).join("");
+                <div class="comment">
+                    <p class="commit">${people.commit}</p>
+                </div>
+            </div>
+        `;
+    }).join("");
         
-        testimonyContainer.innerHTML = peoples;
-    });
+    testimonyContainer.innerHTML = peoples;
 
-
-
-        let skills = document.getElementById("skills");
+    let skills = document.getElementById("skills");
     
-        const skillsData = [
-            { name: "HTML", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/html-logo.webp" },
-            { name: "CSS", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/css-logo.webp" },
-            { name: "JavaScript", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/javascript-logo.webp" },
-            { name: "Node.js", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/node-logo.webp" },
-            { name: "React.js", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/react-logo.webp" }
-        ];
-    
-        const skillHTML = skillsData.map(skill => {
-            return `
-                
-                    <div class="skill">
-                        <img src="${skill.image}" class="image">
-                        <span id="skillName">${skill.name}</span>
-                    </div>
-                
-            `;
-        }).join("");
-    
-        skills.innerHTML = skillHTML;
-
-// Phone input initialization
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const phoneInput = document.querySelector("#phone");
-        if (phoneInput) {
-            const iti = window.intlTelInput(phoneInput, {
-                preferredCountries: ["lb", "us", "gb"], // Lebanon first
-                separateDialCode: true,
-                utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
-            });
-            
-            // Add form validation to ensure the phone number is valid before submission
-            const form = document.querySelector(".contact-form");
-            if (form) {
-                form.addEventListener('submit', function(e) {
-                    if (!iti.isValidNumber()) {
-                        e.preventDefault();
-                        alert("Please enter a valid phone number.");
-                        phoneInput.focus();
-                    }
-                });
-            }
-        }
-    });
-
-
-
-// EmailJS integration
-(function() {
-    
-    emailjs.init("lzQe2u7K0YNTWqD6H");
-    
- 
-    const formFields = [
-        { id: "name", message: "Please enter your full name" },
-        { id: "email", message: "Enter a valid email address (example@domain.com)" },
-        { id: "phone", message: "Enter a valid phone number with country code" },
-        { id: "message", message: "Your message (maximum 300 words)" }
+    const skillsData = [
+        { name: "HTML", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/html-logo.webp" },
+        { name: "CSS", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/css-logo.webp" },
+        { name: "JavaScript", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/javascript-logo.webp" },
+        { name: "Node.js", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/node-logo.webp" },
+        { name: "React.js", image: "https://raw.githubusercontent.com/MoemenTurkmani1/portfolio_web_level_1/refs/heads/main/images/react-logo.webp" }
     ];
     
-    formFields.forEach(field => {
-        const inputElement = document.querySelector(`#${field.id}`);
-        if (inputElement) {
-            // Create attention text element
-            const attentionText = document.createElement("small");
-            attentionText.className = "attention-text";
-            attentionText.style.fontSize = "0.8rem";
-            attentionText.style.color = "#666";
-            attentionText.style.display = "block";
-            attentionText.style.marginTop = "3px";
-            attentionText.style.marginBottom = "10px";
-            attentionText.textContent = field.message;
-            
-            // Insert attention text after input
-            inputElement.parentNode.insertBefore(attentionText, inputElement.nextSibling);
-            
-            // Add validation handlers for each field
-            inputElement.addEventListener("blur", function() {
-                validateField(inputElement, attentionText);
-            });
-        }
-    });
+    const skillHTML = skillsData.map(skill => {
+        return `
+            <div class="skill">
+                <img src="${skill.image}" class="image">
+                <span id="skillName">${skill.name}</span>
+            </div>
+        `;
+    }).join("");
     
-    // Word counter for message textarea
-    const messageTextarea = document.querySelector("#message");
-    if (messageTextarea) {
-        // Create word counter element
-        const wordCounter = document.createElement("div");
-        wordCounter.className = "word-counter";
-        wordCounter.style.fontSize = "0.8rem";
-        wordCounter.style.fontWeight = "bold";
-        wordCounter.style.marginTop = "5px";
-        wordCounter.textContent = "0 / 300 words";
+    skills.innerHTML = skillHTML;
+
+
+
+    // EmailJS integration
+    (function() {
+        emailjs.init("lzQe2u7K0YNTWqD6H");
         
-        // Insert counter after textarea and attention text
-        const attentionText = messageTextarea.nextSibling;
-        attentionText.parentNode.insertBefore(wordCounter, attentionText.nextSibling);
+        const formFields = [
+            { id: "name", message: "" },
+            { id: "email", message: "" },
+            { id: "phone", message: "" },
+            { id: "message", message: "" }
+        ];
         
-        // Update counter on input
-        messageTextarea.addEventListener("input", function() {
-            const text = messageTextarea.value.trim();
-            const words = text ? text.split(/\s+/).length : 0;
-            
-            wordCounter.textContent = `${words} / 300 words`;
-            
-            // Highlight counter if over limit
-            if (words > 300) {
-                wordCounter.style.color = "red";
-            } else if (words > 250) {
-                wordCounter.style.color = "orange";
+        // Define the validateField function
+        function validateField(inputElement, attentionText) {
+            // Basic validation logic
+            if (!inputElement.value.trim()) {
+                attentionText.style.color = "#ff0000";
             } else {
-                wordCounter.style.color = "green";
+                attentionText.style.color = "#666";
+            }
+        }
+        
+        formFields.forEach(field => {
+            const inputElement = document.querySelector(`#${field.id}`);
+            if (inputElement) {
+                // Create attention text element
+                const attentionText = document.createElement("small");
+                attentionText.className = "attention-text";
+                attentionText.style.fontSize = "0.8rem";
+                attentionText.style.color = "#666";
+                attentionText.style.display = "block";
+                attentionText.style.marginTop = "3px";
+                attentionText.style.marginBottom = "10px";
+                attentionText.textContent = field.message; // Now an empty string
+                
+                // Insert attention text after input
+                inputElement.parentNode.insertBefore(attentionText, inputElement.nextSibling);
+                
+                // Add validation handlers for each field
+                inputElement.addEventListener("blur", function() {
+                    validateField(inputElement, attentionText);
+                });
             }
         });
-    }
-    
-    // Validate individual field
-    function validateField(inputElement, attentionText) {
-        let isValid = true;
-        
-        if (inputElement.id === "name") {
-            if (inputElement.value.trim().length < 2) {
-                attentionText.textContent = "Name must be at least 2 characters";
-                attentionText.style.color = "red";
-                isValid = false;
-            } else {
-                attentionText.textContent = "Please enter your full name";
-                attentionText.style.color = "#666";
-            }
-        } else if (inputElement.id === "email") {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(inputElement.value)) {
-                attentionText.textContent = "Please enter a valid email address";
-                attentionText.style.color = "red";
-                isValid = false;
-            } else {
-                attentionText.textContent = "Enter a valid email address (example@domain.com)";
-                attentionText.style.color = "#666";
-            }
-        } else if (inputElement.id === "phone") {
-            if (!phoneInput.value.trim()) {
-                attentionText.textContent = "Phone number is required";
-                attentionText.style.color = "red";
-                isValid = false;
-            } else {
-                attentionText.textContent = "Enter a valid phone number with country code";
-                attentionText.style.color = "#666";
-            }
-        } else if (inputElement.id === "message") {
-            const words = inputElement.value.trim() ? inputElement.value.trim().split(/\s+/).length : 0;
-            if (words > 300) {
-                attentionText.textContent = "Your message exceeds 300 words limit";
-                attentionText.style.color = "red";
-                isValid = false;
-            } else {
-                attentionText.textContent = "Your message (maximum 300 words)";
-                attentionText.style.color = "#666";
-            }
+
+        // Word counter for message textarea
+        const messageTextarea = document.querySelector("#message");
+        if (messageTextarea) {
+            // Create word counter element
+            const wordCounter = document.createElement("div");
+            wordCounter.className = "word-counter";
+            wordCounter.style.fontSize = "0.8rem";
+            wordCounter.style.fontWeight = "bold";
+            wordCounter.style.marginTop = "5px";
+            wordCounter.textContent = "0 / 300 words";
+            
+            // Insert counter after textarea and attention text
+            const attentionText = messageTextarea.nextSibling;
+            attentionText.parentNode.insertBefore(wordCounter, attentionText.nextSibling);
+            
+            // Update counter on input
+            messageTextarea.addEventListener("input", function() {
+                const text = messageTextarea.value.trim();
+                const words = text ? text.split(/\s+/).length : 0;
+                
+                wordCounter.textContent = `${words} / 300 words`;
+                
+                // Highlight counter if over limit
+                if (words > 300) {
+                    wordCounter.style.color = "red";
+                } else if (words > 250) {
+                    wordCounter.style.color = "orange";
+                } else {
+                    wordCounter.style.color = "green";
+                }
+            });
         }
         
+        // Validate individual field
+        function validateField(inputElement, attentionText) {
+            let isValid = true;
+            
+            if (inputElement.id === "name") {
+                if (inputElement.value.trim().length < 2) {
+                    attentionText.textContent = "Name must be at least 2 characters";
+                    attentionText.style.color = "red";
+                    isValid = false;
+                } 
+            } else if (inputElement.id === "email") {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.com+$/;
+                if (!emailRegex.test(inputElement.value)) {
+                    attentionText.textContent = "Please enter a valid email address";
+                    attentionText.style.color = "red";
+                    isValid = false;
+                } 
+            } else if (inputElement.id === "phone") {
+                if (!phoneInput.value.trim()) {
+                    attentionText.textContent = "Phone number is required";
+                    attentionText.style.color = "red";
+                    isValid = false;
+                } 
+            } else if (inputElement.id === "message") {
+                const words = inputElement.value.trim() ? inputElement.value.trim().split(/\s+/).length : 0;
+                if (words > 300) {
+                    attentionText.textContent = "Your message exceeds 300 words limit";
+                    attentionText.style.color = "red";
+                    isValid = false;
+                } 
+            }
+            
+            return isValid;
+        }
+        
+        const contactForm = document.querySelector(".contact-form");
+        
+        if (contactForm) {
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+    
+                const submitButton = contactForm.querySelector("button[type='submit']");
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = "Sending...";
+                submitButton.disabled = true;
+                
+                const name = contactForm.querySelector("#name").value;
+                const email = contactForm.querySelector("#email").value;
+                const phone = phoneInput.value;
+                const message = contactForm.querySelector("#message").value;
+                
+                const templateParams = {
+                    from_name: name,
+                    from_email: email,
+                    phone_number: phone,
+                    message: message
+                };
+                
+                emailjs.send("service_f9xz2q3","template_aaneodo", templateParams)
+                    .then(function(response) {
+                        console.log("SUCCESS!", response.status, response.text);
+                        
+                        contactForm.reset();
+                        
+                
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
+                        
+                        const wordCounter = document.querySelector(".word-counter");
+                        if (wordCounter) {
+                            wordCounter.textContent = "0 / 300 words";
+                            wordCounter.style.color = "green";
+                        }
+                    })
+                    .catch(function(error) {
+                        console.error("FAILED...", error);
+                        
+                        alert("Failed to send message. Please try again later.");
+        
+                        submitButton.textContent = originalButtonText;
+                        submitButton.disabled = false;
+                    });
+            });
+        }
+    })();
+    const phoneInput = document.querySelector("#phone");
+    
+    // Initialize International Telephone Input
+    const iti = window.intlTelInput(phoneInput, {
+        // Specify preferred countries (first in the list will be default)
+        preferredCountries: ["lb", "us", "gb"],
+        
+        // Separate dial code from the phone number
+        separateDialCode: true,
+        
+        // Specify the path to the utils script (required for validation)
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.1.1/build/js/utils.js",
+        
+        // Customize country dropdown
+        autoPlaceholder: "aggressive",
+        
+        // Enable country search
+        nationalMode: false,
+        
+        // Formatting options
+        formatOnDisplay: true,
+        autoHideDialCode: true
+    });
+
+    // Phone number validation function
+    function validatePhoneNumber() {
+        // Check if the number is valid
+        const isValid = iti.isValidNumber();
+        
+        // Get the full international number
+        const fullNumber = iti.getNumber();
+        
+        // Get the country data
+        const countryData = iti.getSelectedCountryData();
+        
+        // Display validation results (you can customize this)
+        console.log({
+            isValid: isValid,
+            fullNumber: fullNumber,
+            countryCode: countryData.dialCode,
+            countryName: countryData.name
+        });
+
         return isValid;
     }
     
-
-    const contactForm = document.querySelector(".contact-form");
-    
-    if (contactForm) {
-        contactForm.addEventListener("submit", function(event) {
-            event.preventDefault();
- 
-            let isFormValid = true;
-            
-            formFields.forEach(field => {
-                const inputElement = document.querySelector(`#${field.id}`);
-                const attentionText = inputElement.nextSibling;
-                
-                if (!validateField(inputElement, attentionText)) {
-                    isFormValid = false;
-                }
-            });
-            
-            if (!isFormValid) {
-                alert("Please correct the errors in the form before submitting.");
-                return;
-            }
-            
-          
-            const submitButton = contactForm.querySelector("button[type='submit']");
-            const originalButtonText = submitButton.textContent;
-            submitButton.textContent = "Sending...";
-            submitButton.disabled = true;
-            
-      
-            const name = contactForm.querySelector("#name").value;
-            const email = contactForm.querySelector("#email").value;
-            const phone = phoneInput.value;
-            const message = contactForm.querySelector("#message").value;
-            
-     
-            const templateParams = {
-                from_name: name,
-                from_email: email,
-                phone_number: phone,
-                message: message
-            };
-            
-
-            emailjs.send("service_f9xz2q3","template_aaneodo", templateParams)
-                .then(function(response) {
-                    console.log("SUCCESS!", response.status, response.text);
-                    
-       
-                    contactForm.reset();
-                    alert("Your message has been sent successfully!");
-              
-                    submitButton.textContent = originalButtonText;
-                    submitButton.disabled = false;
-                    
-                    const wordCounter = document.querySelector(".word-counter");
-                    if (wordCounter) {
-                        wordCounter.textContent = "0 / 300 words";
-                        wordCounter.style.color = "green";
-                    }
-                })
-                .catch(function(error) {
-                    console.error("FAILED...", error);
-                    
-         
-                    alert("Failed to send message. Please try again later.");
-      
-                    submitButton.textContent = originalButtonText;
-                    submitButton.disabled = false;
-                });
-        });
-    }
-})();
+});
